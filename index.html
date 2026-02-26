@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dash</title>
+  <style>
+    html, body { margin:0; background:black; height:100%; }
+    img { width:100vw; height:100vh; object-fit:contain; }
+  </style>
+</head>
+<body>
+  <img id="img" alt="dash">
+
+  <script>
+    const BASE =
+      "https://raw.githubusercontent.com/cmbel78/dash/refs/heads/screenshot-live/screenshot.png";
+
+    function reloadImage() {
+      document.getElementById("img").src = BASE + "?t=" + Date.now();
+    }
+
+    reloadImage();
+    setInterval(reloadImage, 900000); // 15 minutes
+  </script>
+</body>
+</html>
